@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "sprawdzniedziele.pl/static/css/main.a807da3f.chunk.css",
-    "main.js": "sprawdzniedziele.pl/static/js/main.a422ec11.chunk.js",
-    "main.js.map": "sprawdzniedziele.pl/static/js/main.a422ec11.chunk.js.map",
-    "runtime~main.js": "sprawdzniedziele.pl/static/js/runtime~main.8678b20a.js",
-    "runtime~main.js.map": "sprawdzniedziele.pl/static/js/runtime~main.8678b20a.js.map",
-    "static/js/2.38793ced.chunk.js": "sprawdzniedziele.pl/static/js/2.38793ced.chunk.js",
-    "static/js/2.38793ced.chunk.js.map": "sprawdzniedziele.pl/static/js/2.38793ced.chunk.js.map",
-    "index.html": "sprawdzniedziele.pl/index.html",
-    "precache-manifest.9199c84528175156b1e03c003062c45d.js": "sprawdzniedziele.pl/precache-manifest.9199c84528175156b1e03c003062c45d.js",
-    "service-worker.js": "sprawdzniedziele.pl/service-worker.js",
-    "static/css/main.a807da3f.chunk.css.map": "sprawdzniedziele.pl/static/css/main.a807da3f.chunk.css.map"
+    "main.css": "/static/css/main.a807da3f.chunk.css",
+    "main.js": "/static/js/main.9443b1ed.chunk.js",
+    "main.js.map": "/static/js/main.9443b1ed.chunk.js.map",
+    "runtime~main.js": "/static/js/runtime~main.a8a9905a.js",
+    "runtime~main.js.map": "/static/js/runtime~main.a8a9905a.js.map",
+    "static/js/2.38793ced.chunk.js": "/static/js/2.38793ced.chunk.js",
+    "static/js/2.38793ced.chunk.js.map": "/static/js/2.38793ced.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.51c04e278de9726463b4bf7ed3ee600e.js": "/precache-manifest.51c04e278de9726463b4bf7ed3ee600e.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.a807da3f.chunk.css.map": "/static/css/main.a807da3f.chunk.css.map"
   }
 }
