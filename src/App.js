@@ -8,21 +8,25 @@ export default class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      isTodayTheLastSunday: this.isSunday(),
+      isTodayTheLastSunday: this.isShopSunday(),
       nextSunday: this.nextSunday(),
       isSunday: moment().day() === 0
     };
   }
   
   componentWillMount() {
-    document.title = `Handlowa? ${this.renderText()}`
+    const { isSunday, isTodayTheLastSunday } = this.state;
+    moment.locale('pl', {
+      weekdays : 'Niedziela_Poniedziałek_Wtorek_Środa_Czwartek_Piątek_Sobota'.split('_'),
+    });
+    document.title = isSunday ? `Handlowa? ${isTodayTheLastSunday ? "TAK" : "NIE"}` : `${moment().format("dddd")}!`
   }
   
   nextSunday(){
-    return this.isSunday() ? moment().add(1, "months").endOf("month").day(0) : moment().endOf("month").day(0)
+    return this.isShopSunday() ? moment().add(1, "months").endOf("month").day(0) : moment().endOf("month").day(0)
   }
 
-  isSunday() {
+  isShopSunday() {
     let lastSunday = moment()
       .endOf("month")
       .day(0);
@@ -32,17 +36,25 @@ export default class App extends Component {
   }
 
   renderText(){
-    let { isTodayTheLastSunday } = this.state;
-    return isTodayTheLastSunday ? "TAK" : "NIE";
+    const { isSunday, isTodayTheLastSunday } = this.state;
+    if (isSunday) {
+      return isTodayTheLastSunday ? <div className="Text Green">TAK!</div> : <div className="Text Red">NIE</div>
+    }else{
+      return (
+        <div>
+            <div className="NotASunday Green">Jest {moment().format("dddd")}!</div>
+            <div className="Subheader Green">Leć na zakupy!</div>
+        </div>
+      )
+    }
   }
 
   render() {
-    let { nextSunday, isSunday } = this.state;
+    const { nextSunday } = this.state;
     return (
       <div className="App">
         <div className="Header">Czy dzisiaj jest niedziela handlowa?</div>
-        <div className="Text">{this.renderText()}</div>
-        {isSunday ? null : <div className="Subheader">ale dzisiaj zrobisz zakupy!</div>}
+        {this.renderText()}
         <div className="NextSundayWrapper">
           Następna niedziela handlowa:{" "}
           <div className="NextSunday">{nextSunday.format("DD-MM-YYYY")} </div>

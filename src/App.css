@@ -7,13 +7,16 @@
   min-height: 100vh;
 }
 
-.Text {
-  color: cornflowerblue;
-  font-size: 120px; 
+
+.Red{
+  color: firebrick;
+}
+
+.Green{
+  color: #76ff03;
 }
 
 .Subheader {
-  color: cornflowerblue;
   font-size: 25px; ;
 }
 
@@ -31,4 +34,32 @@
 
 .NextSunday {
   color: cornflowerblue;
+}
+
+
+@media (min-width: 1000px) {
+  .Text {
+    font-size: 120px; 
+  }
+  .NotASunday {
+    font-size: 100px
+  }
+}
+
+@media (min-width: 800px) {
+  .Text {
+    font-size: 100px; 
+  }
+  .NotASunday {
+    font-size: 80px
+  }
+}
+
+@media (max-width: 800px) {
+  .Text {
+    font-size: 80px; 
+  }
+  .NotASunday {
+    font-size: 60px
+  }
 }
