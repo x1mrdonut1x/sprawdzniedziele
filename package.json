@@ -2,7 +2,7 @@
   "name": "sprawdzniedziele",
   "version": "0.1.0",
   "private": true,
-  "homepage":"https://sprawdzniedziele.pl",
+  "homepage": "https://sprawdzniedziele.pl",
   "dependencies": {
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.14.0",
