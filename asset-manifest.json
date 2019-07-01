@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/sprawdzniedziele/static/css/main.adab06fd.chunk.css",
+    "main.css": "/sprawdzniedziele/static/css/main.07a87a4b.chunk.css",
     "main.js": "/sprawdzniedziele/static/js/main.8c661cdc.chunk.js",
     "main.js.map": "/sprawdzniedziele/static/js/main.8c661cdc.chunk.js.map",
     "runtime~main.js": "/sprawdzniedziele/static/js/runtime~main.eb1e93e6.js",
@@ -8,8 +8,8 @@
     "static/js/2.38793ced.chunk.js": "/sprawdzniedziele/static/js/2.38793ced.chunk.js",
     "static/js/2.38793ced.chunk.js.map": "/sprawdzniedziele/static/js/2.38793ced.chunk.js.map",
     "index.html": "/sprawdzniedziele/index.html",
-    "precache-manifest.6dcd993b1c671c510d09424a02c7a063.js": "/sprawdzniedziele/precache-manifest.6dcd993b1c671c510d09424a02c7a063.js",
+    "precache-manifest.dc66d40566af61c539ee71ff1e0a2658.js": "/sprawdzniedziele/precache-manifest.dc66d40566af61c539ee71ff1e0a2658.js",
     "service-worker.js": "/sprawdzniedziele/service-worker.js",
-    "static/css/main.adab06fd.chunk.css.map": "/sprawdzniedziele/static/css/main.adab06fd.chunk.css.map"
+    "static/css/main.07a87a4b.chunk.css.map": "/sprawdzniedziele/static/css/main.07a87a4b.chunk.css.map"
   }
 }
