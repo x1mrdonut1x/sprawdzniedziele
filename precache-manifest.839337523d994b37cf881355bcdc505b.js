@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "a0fd71522d221ae3774477019da35961",
+    "revision": "848d44a598522306b5eb90670c405358",
     "url": "/sprawdzniedziele/index.html"
   },
   {
-    "revision": "8691dca31fc1eac21ec0",
+    "revision": "aa100ef0ebb1c4e9cf7f",
     "url": "/sprawdzniedziele/static/css/main.2702f46e.chunk.css"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/sprawdzniedziele/static/js/2.38793ced.chunk.js"
   },
   {
-    "revision": "8691dca31fc1eac21ec0",
-    "url": "/sprawdzniedziele/static/js/main.af392535.chunk.js"
+    "revision": "aa100ef0ebb1c4e9cf7f",
+    "url": "/sprawdzniedziele/static/js/main.c48e03a2.chunk.js"
   },
   {
     "revision": "39f10bc007d6a72fb069",

@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/sprawdzniedziele/precache-manifest.7f5ef59064099a9d98be0b0a703ff27d.js"
+  "/sprawdzniedziele/precache-manifest.839337523d994b37cf881355bcdc505b.js"
 );
 
 self.addEventListener('message', (event) => {
