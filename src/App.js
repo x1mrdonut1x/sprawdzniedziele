@@ -32,7 +32,7 @@ export default class App extends Component {
       .day(0);
       
     let today = moment();
-    return today.isSame(lastSunday);
+    return today.isSame(lastSunday, 'day');
   }
 
   renderText(){
