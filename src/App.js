@@ -4,48 +4,73 @@ import React, { Component } from "react";
 
 import moment from "moment";
 
+export const OPEN_DAYS = [
+  "2019/12/29",
+  "2020/01/26",
+  "2020/04/5",
+  "2020/04/26",
+  "2020/06/28",
+  "2020/08/30",
+  "2020/12/13",
+  "2020/12/20"
+];
+
 export default class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      isTodayTheLastSunday: this.isShopSunday(),
+      isTodayOpen: this.isShopSunday(moment()),
       nextSunday: this.nextSunday(),
       isSunday: moment().day() === 0
     };
   }
-  
+
   componentWillMount() {
-    const { isSunday, isTodayTheLastSunday } = this.state;
-    moment.locale('pl', {
-      weekdays : 'Niedziela_Poniedziałek_Wtorek_Środa_Czwartek_Piątek_Sobota'.split('_'),
+    const { isSunday, isTodayOpen } = this.state;
+    moment.locale("pl", {
+      weekdays: "Niedziela_Poniedziałek_Wtorek_Środa_Czwartek_Piątek_Sobota".split(
+        "_"
+      )
     });
-    document.title = isSunday ? `Handlowa? ${isTodayTheLastSunday ? "TAK" : "NIE"}` : `${moment().format("dddd")}!`
-  }
-  
-  nextSunday(){
-    return this.isShopSunday() ? moment().add(1, "months").endOf("month").day(0) : moment().endOf("month").day(0)
+    document.title = isSunday
+      ? `Handlowa? ${isTodayOpen ? "TAK" : "NIE"}`
+      : `${moment().format("dddd")}!`;
   }
 
-  isShopSunday() {
-    let lastSunday = moment()
-      .endOf("month")
-      .day(0);
-      
-    let today = moment();
-    return today.isSame(lastSunday, 'day');
+  nextSunday() {
+    for (let i = 0; i < OPEN_DAYS.length; ++i) {
+      if (moment().isBefore(OPEN_DAYS[i])) {
+        return moment(OPEN_DAYS[i]);
+      }
+    }
   }
 
-  renderText(){
-    const { isSunday, isTodayTheLastSunday } = this.state;
+  isShopSunday(date) {
+    for (let i = 0; i < OPEN_DAYS.length; ++i) {
+      if (date.isSame(OPEN_DAYS[i], "date")) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  renderText() {
+    const { isSunday, isTodayOpen } = this.state;
     if (isSunday) {
-      return isTodayTheLastSunday ? <div className="Text Green">TAK!</div> : <div className="Text Red">NIE</div>
-    }else{
+      return isTodayOpen ? (
+        <div className="Text Green">TAK!</div>
+      ) : (
+        <div className="Text Red">NIE</div>
+      );
+    } else {
       return (
         <div>
-            <div className="NotASunday Green">Jest {moment().format("dddd")}!</div>
-            <div className="Subheader Green">Leć na zakupy!</div>
+          <div className="NotASunday Green">
+            Jest {moment().format("dddd")}!
+          </div>
+          <div className="Subheader Green">Leć na zakupy!</div>
         </div>
-      )
+      );
     }
   }
 
