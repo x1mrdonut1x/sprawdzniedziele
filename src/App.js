@@ -5,14 +5,13 @@ import React, { Component } from "react";
 import moment from "moment";
 
 export const OPEN_DAYS = [
-  "2019/12/29",
-  "2020/01/26",
-  "2020/04/5",
-  "2020/04/26",
-  "2020/06/28",
-  "2020/08/30",
-  "2020/12/13",
-  "2020/12/20"
+  "2021/01/31",
+  "2021/03/28",
+  "2021/04/25",
+  "2021/06/27",
+  "2021/08/29",
+  "2021/12/12",
+  "2021/12/19",
 ];
 
 export default class App extends Component {
@@ -21,16 +20,14 @@ export default class App extends Component {
     this.state = {
       isTodayOpen: this.isShopSunday(moment()),
       nextSunday: this.nextSunday(),
-      isSunday: moment().day() === 0
+      isSunday: moment().day() === 0,
     };
   }
 
   componentWillMount() {
     const { isSunday, isTodayOpen } = this.state;
     moment.locale("pl", {
-      weekdays: "Niedziela_Poniedziałek_Wtorek_Środa_Czwartek_Piątek_Sobota".split(
-        "_"
-      )
+      weekdays: "Niedziela_Poniedziałek_Wtorek_Środa_Czwartek_Piątek_Sobota".split("_"),
     });
     document.title = isSunday
       ? `Handlowa? ${isTodayOpen ? "TAK" : "NIE"}`
@@ -65,9 +62,7 @@ export default class App extends Component {
     } else {
       return (
         <div>
-          <div className="NotASunday Green">
-            Jest {moment().format("dddd")}!
-          </div>
+          <div className="NotASunday Green">Jest {moment().format("dddd")}!</div>
           <div className="Subheader Green">Leć na zakupy!</div>
         </div>
       );
@@ -82,7 +77,9 @@ export default class App extends Component {
         {this.renderText()}
         <div className="NextSundayWrapper">
           Następna niedziela handlowa:{" "}
-          <div className="NextSunday">{nextSunday.format("DD-MM-YYYY")} </div>
+          <div className="NextSunday">
+            {nextSunday ? nextSunday.format("DD-MM-YYYY") : "Coś poszło nie tak!!"}{" "}
+          </div>
         </div>
       </div>
     );
